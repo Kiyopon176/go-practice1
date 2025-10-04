@@ -3,7 +3,7 @@
 Run the server:
 
 ```powershell
-go run ./cmd/api
+go run .lab2/cmd/api
 ```
 
 Examples:
