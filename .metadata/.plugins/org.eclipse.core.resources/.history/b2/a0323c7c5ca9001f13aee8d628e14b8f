@@ -1,0 +1,22 @@
+package lab3;
+
+public class Eagle extends Animal {
+	
+	public Eagle(String name) {
+		super(name);
+	}
+	
+	@Override
+	public void makeSound() {
+		System.out.println("Raaah");
+	}
+	@Override
+	public void fly() {
+		System.out.println("Fly");
+	}
+	@Override
+	public void move() {
+		System.out.println("Move");
+	}
+	
+}

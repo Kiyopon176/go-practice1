@@ -1,0 +1,42 @@
+
+import java.util.*;
+
+public class TestTaskFour {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		Employee emp1 = new Employee("John Doe",50000, new Date(),"IN12345");
+		Employee emp2 = new Employee("Jane Doe",60000, new Date(),"IN12346");
+		
+		Manager mngr1 = new Manager("Ad Te", 80000, new Date(), "IN12347", 5000);
+		mngr1.getTeam().add(emp1);
+		mngr1.getTeam().add(emp2);
+		
+		Manager mangr2 = (Manager) mngr1.clone();
+		
+		mangr2.team.remove(1);
+		
+		
+		System.out.println(mangr2);
+		
+//		Employee clonedEmp1 = (Employee) emp1.clone();
+//		
+////		emp1.setName("Alibek");
+////		
+////		System.out.println(emp1);
+////		System.out.println(clonedEmp1);
+//		
+//		System.out.println("emp1 is equal to emp2: " + emp1.equals(emp2));
+//		System.out.println("mngr1 is equal to emp1: " + mngr1.equals(emp1));
+//		
+//		Vector<Employee> e = new Vector<>();
+//		e.add(emp1);
+//		e.add(emp2);
+//		e.add(mngr1);
+//		e.sort(new NameComparator());
+//		System.out.println("Sorted by name: " + e);
+//		e.sort(new HireDateComparator());
+//		System.out.println("Sorted by hire date: " + e);
+//		
+	}
+
+}

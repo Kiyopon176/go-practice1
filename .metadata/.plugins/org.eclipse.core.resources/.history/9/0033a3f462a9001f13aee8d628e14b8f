@@ -1,0 +1,60 @@
+
+import java.util.*;
+
+public class Manager extends Employee {
+  private Vector<Employee> team;
+  private double bonus;
+
+  public Manager(String name, double annualSalary, Date hireDate, String insuranceNumber, double bonus){
+    super(name, annualSalary, hireDate, insuranceNumber);
+    this.bonus = bonus;
+    this.team = new Vector<>();
+  }
+
+  public Vector<Employee> getTeam(){
+    return team;
+  }
+  public double getBonus(){
+    return bonus;
+  }
+
+  @Override
+    public String toString() {
+        return "\nManager{" +
+                "name='" + getName() + '\'' +
+                ", annualSalary=" + getAnnualSalary() +
+                ", hireDate=" + getHireDate() +
+                ", nationalInsuranceNumber='" + getInsuranceNumber() + '\'' +
+                ", bonus=" + bonus +
+                "}\n";
+    }
+
+  @Override
+  public boolean equals(Object obj){
+    if(this == obj) return true;
+    if(obj == null || getClass() != obj.getClass()) return false;
+    Manager manager = (Manager) obj;
+    return getName().equals(manager.getName()) && getAnnualSalary() == manager.getAnnualSalary() && getHireDate().equals(manager.getHireDate()) && getInsuranceNumber().equals(manager.getInsuranceNumber()) && bonus == manager.bonus;
+  }
+
+  @Override
+  public int hashCode(){
+    return Objects.hash(getName(), getAnnualSalary(), getHireDate(), getInsuranceNumber(), bonus);
+  }
+  @Override
+    public int compareTo(Employee other) {
+        if (other instanceof Manager) {
+            Manager otherManager = (Manager) other;
+            int salaryComparison = Double.compare(this.getAnnualSalary(), otherManager.getAnnualSalary());
+            if (salaryComparison != 0) {
+                return salaryComparison;
+            }
+            return Double.compare(this.bonus, otherManager.bonus);
+        }
+        return super.compareTo(other);
+    }
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+}

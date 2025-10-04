@@ -1,0 +1,27 @@
+package lab3;
+
+public class TestCollection {
+
+	public static void main(String[] args) {
+        MyCollection<String> myCollection = new ArrayCollection<>();
+
+        myCollection.add("Apple");
+        myCollection.add("Pear");
+        myCollection.add("Melon");
+
+        System.out.println("Size: " + myCollection.size());
+
+        System.out.println("Contains 'Pear': " + myCollection.contains("Pear"));
+
+        myCollection.remove("Pear");
+        System.out.println("Contains 'Pear' after removal: " + myCollection.contains("Pear"));
+
+        for (String fruit : myCollection) {
+            System.out.println(fruit);
+        }
+
+        myCollection.clear();
+        System.out.println("Is empty after clear: " + myCollection.isEmpty());
+    }
+
+}

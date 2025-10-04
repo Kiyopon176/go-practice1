@@ -1,0 +1,58 @@
+package lab3;
+
+import java.util.*;
+
+public class Employee extends Person implements Comparable<Employee>, Cloneable{
+  private double annualSalary;
+  private Date hireDate;
+  private String insuranceNumber;
+
+  public Employee(String name, double annualSalary, Date hireDate, String insuranceNumber){
+    super(name);
+    this.annualSalary = annualSalary;
+    this.hireDate = hireDate;
+    this.insuranceNumber = insuranceNumber;
+  }
+
+  public double getAnnualSalary(){
+    return annualSalary;
+  }
+  public Date getHireDate(){
+    return hireDate;
+  }
+  public String getInsuranceNumber(){
+    return insuranceNumber;
+  }
+
+  @Override
+    public String toString() {
+        return "\nEmployee{" +
+                "name='" + getName() + '\'' +
+                ", annualSalary=" + annualSalary +
+                ", hireDate=" + hireDate +
+                ", nationalInsuranceNumber='" + insuranceNumber + '\'' +
+                "}\n";
+    }
+
+  @Override
+  public boolean equals(Object obj){
+    if(this == obj) return true;
+    if(obj == null || getClass() != obj.getClass()) return false;
+    Employee employee = (Employee) obj;
+    return getName().equals(employee.getName()) && annualSalary == employee.annualSalary && hireDate.equals(employee.hireDate) && insuranceNumber.equals(employee.insuranceNumber);
+  }
+
+  @Override
+  public int hashCode(){
+    return Objects.hash(getName(), annualSalary, hireDate, insuranceNumber);
+  }
+  
+  @Override
+  public int compareTo(Employee other) {
+      return Double.compare(this.annualSalary, other.annualSalary);
+  }
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+}

@@ -1,0 +1,23 @@
+package test_lab3;
+
+public abstract class Animal implements Flyable {
+	private String name;
+	
+	public Animal(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public abstract void makeSound();
+
+	public void move() {
+		
+	}
+	public void fly() {
+		
+	}
+
+}

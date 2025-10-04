@@ -1,0 +1,46 @@
+package lab3;
+
+import java.util.*;
+
+public class ArrayCollection<E> implements MyCollection<E>{
+	private ArrayList<E> list;
+
+    public ArrayCollection() {
+        list = new ArrayList<>();
+    }
+
+    @Override
+    public boolean add(E e) {
+        return list.add(e);
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        return list.remove(o);
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return list.contains(o);
+    }
+
+    @Override
+    public int size() {
+        return list.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+    @Override
+    public void clear() {
+        list.clear();
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return list.iterator();
+    }
+}
